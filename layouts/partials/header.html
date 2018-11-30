@@ -26,10 +26,10 @@
 
           <div class="collapse navbar-collapse" id="navbarnavaltmarkup">
             <div class="navbar-nav">
-              {{ range .site.menus.main }}
-                {{ $url := urls.parse .url }}
-                {{ $baseurl := urls.parse $.site.params.baseurl }}
-                <a class="nav-item nav-link" href="{{ .url }}" title="{{ .title }}" {{ if ne $url.Host $baseurl.Host }}target="_blank"{{ end }}>{{ .Name }}</a>
+              {{ range .Site.Menus.main }}
+								{{ $url := urls.Parse .URL }}
+            		{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}" {{ if ne $url.Host $baseurl.Host }}target="_blank"{{ end }}>{{ .Name }}</a>
               {{ end }}
             </div>
           </div>
