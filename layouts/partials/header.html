@@ -24,10 +24,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="collapse navbar-collapse" id="navbarnavaltmarkup">
             <div class="navbar-nav">
-              {{ range .Site.Menus.main }}
-                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}" target="{{ .Target }}">{{ .Name }}</a>
+              {{ range .site.menus.main }}
+                {{ $url := urls.parse .url }}
+                {{ $baseurl := urls.parse $.site.params.baseurl }}
+                <a class="nav-item nav-link" href="{{ .url }}" title="{{ .title }}" {{ if ne $url.Host $baseurl.Host }}target="_blank"{{ end }}>{{ .Name }}</a>
               {{ end }}
             </div>
           </div>
