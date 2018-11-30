@@ -27,7 +27,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               {{ range .Site.Menus.main }}
-                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}" target="{{ .Target }}">{{ .Name }}</a>
               {{ end }}
             </div>
           </div>
