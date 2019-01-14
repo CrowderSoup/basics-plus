@@ -27,9 +27,9 @@
           <div class="collapse navbar-collapse" id="navbarnavaltmarkup">
             <div class="navbar-nav">
               {{ range .Site.Menus.main }}
-								{{ $url := urls.Parse .URL }}
-            		{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
-                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}" {{ if ne $url.Host $baseurl.Host }}target="_blank"{{ end }}>{{ .Name }}</a>
+                {{ $url := urls.Parse .URL }}
+                {{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+                <a class="nav-item nav-link" href="{{ .URL }}" title="{{ .Title }}" rel="me" {{ if ne $url.Host $baseurl.Host }}target="_blank"{{ end }}>{{ .Name }}</a>
               {{ end }}
             </div>
           </div>
